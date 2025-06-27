@@ -19,13 +19,14 @@
     const params = new URLSearchParams(window.location.search);
     const name = params.get("name");
     const email = params.get("email");
+    const room = params.get("room");
     const image = params.get("image_url");
 
     if (name) document.getElementById("username").textContent = decodeURIComponent(name);
     if (image) document.getElementById("designImage").src = decodeURIComponent(image);
 
     const tallyFormId = "wzADbg"; // Replace with your actual Tally form ID
-    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&hideTitle=1`;
+    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&room=${encodeURIComponent(room)}&hideTitle=1`;
 
     document.getElementById("tallyFrame").src = tallyURL;
   </script>
