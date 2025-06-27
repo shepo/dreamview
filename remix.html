@@ -4,7 +4,7 @@
   <title>Remix Your Design</title>
   <style>
     body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
-    img { max-width: 100%; border-radius: 12px; margin-bottom: 20px; }
+    img { max-width: 60%; border-radius: 12px; margin-bottom: 20px; }
     iframe { width: 100%; height: 600px; border: none; }
   </style>
 </head>
@@ -26,7 +26,7 @@
     if (image) document.getElementById("designImage").src = decodeURIComponent(image);
 
     const tallyFormId = "wzADbg"; // Replace with your actual Tally form ID
-    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&room=${encodeURIComponent(room)}&hideTitle=1`;
+    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&room=${encodeURIComponent(room)}&hideTitle=1@hide`;
 
     document.getElementById("tallyFrame").src = tallyURL;
   </script>
