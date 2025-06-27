@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Design Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Review and Edit Your Design</h1>
+
+  <p>This is your current render. If you’d like to request changes, please fill in the form below:</p>
+
+  <!-- Replace this with your Cloudinary image URL -->
+  <img src="https://res.cloudinary.com/dmzi8nj6y/image/upload/v1750173340/fzrmngsdldbewwrqxhfe.webp" alt="Your Render">
+
+  <!-- Replace FORM_ID with your Tally form ID -->
+  <iframe
+    src="https://tally.so/r/wvv5z8?hideTitle=1&uid="
+    id="tally-frame"
+    allowfullscreen></iframe>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const uid = params.get("uid");
+    if (uid) {
+      document.getElementById("tally-frame").src += encodeURIComponent(uid);
+    }
+  </script>
+</body>
+</html>
