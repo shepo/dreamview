@@ -5,7 +5,18 @@
   <style>
     body { font-family: sans-serif; padding: 20px; max-width: 800px; margin: auto; }
     img { max-width: 60%; border-radius: 12px; margin-bottom: 20px; }
-    iframe { width: 100%; height: 600px; border: none; }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      img { max-width: 100%; }
+      iframe { height: 500px; margin: 0; }
+    }
   </style>
 </head>
 <body>
@@ -20,12 +31,14 @@
     const email = params.get("email");
     const room = params.get("room");
     const image = params.get("image_url");
+    const width = params.get("width");
+    const length = params.get("length");
 
     if (name) document.getElementById("username").textContent = decodeURIComponent(name);
     if (image) document.getElementById("designImage").src = decodeURIComponent(image);
 
     const tallyFormId = "wzADbg"; // Replace with your actual Tally form ID
-    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&image_url=${encodeURIComponent(image)}&room=${encodeURIComponent(room)}&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
+    const tallyURL = `https://tally.so/r/${tallyFormId}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}&image_url=${encodeURIComponent(image)}&room=${encodeURIComponent(room)}&width=${encodeURIComponent(width)}&length=${encodeURIComponent(length)}&alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1`;
 
     document.getElementById("tallyFrame").src = tallyURL;
   </script>
